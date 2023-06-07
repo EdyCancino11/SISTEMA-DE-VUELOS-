@@ -1,0 +1,34 @@
+<div class="vuelo-container">
+    <h2>CLIENTES</h2>
+
+    <button class="btn-asignar" (click)="asignarVuelos()">Asignar Cliente</button>
+   
+    <table class="tabla-vuelos">
+      <thead>
+        <tr>
+          <th>ID Cliente</th>
+          <th>Sexo</th>
+          <th>Nombre</th>
+          <th>Nacionalidad</th>
+          <th>Firma</th>
+          <th>Fecha de Nacimiento</th>
+          <th>Acciones</th>
+        </tr> 
+      </thead>
+      <tbody>
+        <tr *ngFor="let vuelo of vuelos">
+          <td><input type="text" [(ngModel)]="vuelo.idCliente" /></td>
+          <td><input type="text" [(ngModel)]="vuelo.sexo" /></td>
+          <td><input type="text" [(ngModel)]="vuelo.nombre" /></td>
+          <td><input type="text" [(ngModel)]="vuelo.nacionalidad" /></td>
+          <td><input type="text" [(ngModel)]="vuelo.firma" /></td>
+          <td><input type="text" [(ngModel)]="vuelo.fechaNacimiento" /></td>
+          <td>
+            <!-- Botones para editar o guardar cambios -->
+            <button class="btn-editar" (click)="editarVuelo(vuelo)">Editar</button>
+            <button class="btn-eliminar" (click)="eliminarVuelo(vuelo)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
